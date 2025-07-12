@@ -65,19 +65,20 @@ docker images
 
 ### Image Size: **642 MB**
 
-➡️ **Problem:** Even though we only want to run the binary, the image contains unnecessary stuff: OS, compilers, tools, and source code — making it bulky.
+**Problem:** Even though we only want to run the binary, the image contains unnecessary stuff: OS, compilers, tools, and source code — making it bulky.
+
 ![alt text](image.png)
 ---
 
 ## Approach 2: Multi-Stage Dockerfile + Distroless Image
 
-📁 Folder: `dockerfile-with-multistage`
+Folder: `dockerfile-with-multistage`
 
 ### Dockerfile:
 
 ```Dockerfile
 # -----------------------------
-# 🏗️ Stage 1 — Build
+#  Stage 1 — Build
 # -----------------------------
 FROM ubuntu AS build
 
@@ -125,7 +126,8 @@ docker images
 
 ### Image Size: **1.96 MB**
 
- **Result:** You've reduced your image size by over **640 MB** using best practices.
+ **Result:** We have managed to reduce our image size by over **640 MB** using best practices.
+ 
 ![alt text](image-1.png)
 ---
 
